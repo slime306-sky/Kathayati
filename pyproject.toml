@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kathayati"
+version = "0.1.0"
+description = "Kathayati: reusable notifications with Markdown templates, a database-backed queue, and pluggable channels."
+requires-python = ">=3.10"
+dependencies = [
+    "SQLAlchemy>=2.0",
+    "Jinja2>=3.1",
+    "Markdown>=3.5",
+    "PyYAML>=6.0",
+    "resend>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+kathayati = "kathayati.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
